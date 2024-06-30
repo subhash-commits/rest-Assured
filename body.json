@@ -1,0 +1,14 @@
+ {
+	"id": "3",
+	"name": "subhash",
+	"age": 20,
+	"grade": "B",
+	"email": "kalvakolusubhash@gmail.com",
+	"courses": [
+		"HTML",
+		"JavaScript",
+		{
+			"subject": "Maths"
+		}
+	]
+}
