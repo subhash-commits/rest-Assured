@@ -48,7 +48,7 @@ public class Authentications {
 	
 	@Test(priority=4)
 	public void testBearerTokenAuthentication() {
-		String BearerToken = "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";
+		String BearerToken = "gihub token";
 		given()
             .headers("Authorization", "Bearer " + BearerToken)
 		 .when()
@@ -75,7 +75,7 @@ public class Authentications {
 	@Test(priority=6)
 	public void testOauth2Authentication() {
 		given()
-            .auth().oauth2("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")
+            .auth().oauth2("\"gihub token\"")
 		 .when()
 		   .get("https://api.github.com/user/repos")
 
