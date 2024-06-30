@@ -45,6 +45,20 @@ public class Authentications {
 		  .body("authenticated", equalTo(true))
 		  .log().all();
 	}
+	
+	@Test(priority=4)
+	public void testBearerTokenAuthentication() {
+		String BearerToken = "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";
+		given()
+            .headers("Authorization", "Bearer " + BearerToken)
+		 .when()
+		   .get("https://api.github.com/user/repos")
+
+		.then()
+		  .statusCode(200)
+		  .log().all();
+	}
+	
 
 	//@Test(priority=5)
 	public void testOauth1Authentication() {
@@ -57,7 +71,19 @@ public class Authentications {
 		  .statusCode(200)
 		  .log().all();
 	}
+	
+	@Test(priority=6)
+	public void testOauth2Authentication() {
+		given()
+            .auth().oauth2("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")
+		 .when()
+		   .get("https://api.github.com/user/repos")
 
+		.then()
+		  .statusCode(200)
+		  .log().all();
+	}
+	
 	@Test(priority=7)
 	public void testapiKeyAuthentication() {
 		//approach 1
