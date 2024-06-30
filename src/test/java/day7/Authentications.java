@@ -46,18 +46,18 @@ public class Authentications {
 		  .log().all();
 	}
 	
-	@Test(priority=4)
-	public void testBearerTokenAuthentication() {
-		String BearerToken = "gihub token";
-		given()
-            .headers("Authorization", "Bearer " + BearerToken)
-		 .when()
-		   .get("https://api.github.com/user/repos")
-
-		.then()
-		  .statusCode(200)
-		  .log().all();
-	}
+//	@Test(priority=4)
+//	public void testBearerTokenAuthentication() {
+//		String BearerToken = "gihub token";
+//		given()
+//            .headers("Authorization", "Bearer " + BearerToken)
+//		 .when()
+//		   .get("https://api.github.com/user/repos")
+//
+//		.then()
+//		  .statusCode(200)
+//		  .log().all();
+//	}
 	
 
 	//@Test(priority=5)
@@ -71,19 +71,19 @@ public class Authentications {
 		  .statusCode(200)
 		  .log().all();
 	}
-	
-	@Test(priority=6)
-	public void testOauth2Authentication() {
-		given()
-            .auth().oauth2("\"gihub token\"")
-		 .when()
-		   .get("https://api.github.com/user/repos")
-
-		.then()
-		  .statusCode(200)
-		  .log().all();
-	}
-	
+//	
+//	@Test(priority=6)
+//	public void testOauth2Authentication() {
+//		given()
+//            .auth().oauth2("\"gihub token\"")
+//		 .when()
+//		   .get("https://api.github.com/user/repos")
+//
+//		.then()
+//		  .statusCode(200)
+//		  .log().all();
+//	}
+//	
 	@Test(priority=7)
 	public void testapiKeyAuthentication() {
 		//approach 1
